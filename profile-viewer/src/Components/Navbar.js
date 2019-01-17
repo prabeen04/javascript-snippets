@@ -7,6 +7,7 @@ import { handleAddUserModal } from "../Store/action";
 export class Navbar extends Component {
     render() {
         const { addUserModal, handleAddUserModal } = this.props;
+        console.log(addUserModal)
         return (
             <div className='navbar'>
                 <Button primary icon='add' onClick={() => handleAddUserModal(true)} />
@@ -18,8 +19,8 @@ export class Navbar extends Component {
     }
 }
 
-const mapStateToProps = ({ initialState }) => ({
-    addUserModal: initialState.addUserModal,
+const mapStateToProps = ({ addUserModal }) => ({
+    addUserModal,
 })
 
 const mapDispatchToProps = dispatch => bindActionCreators({
