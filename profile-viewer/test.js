@@ -12,16 +12,18 @@ function solution(D, T) {
         let returnedDate = new Date(list[2].innerHTML);
         if (row.getAttribute('style') === 'background-color: red') {
             redRowCount++
-            if ((daysBetween(issuedDate, returnedDate) < T || daysBetween(issuedDate, new Date(D)) < T)  ) {
+            if ((daysBetween(issuedDate, returnedDate) < T || daysBetween(issuedDate, new Date(D)) < T)) {
                 wrongRedRowCount++
             }
         }
 
         if (daysBetween(issuedDate, returnedDate) > T || daysBetween(issuedDate, new Date(D)) > T) {
-            overdueCount++
+            if (row.getAttribute('style') === 'background-color: red') {
+                redRowCount++
+            }
         }
     }
-    return (overdueCount - (redRowCount - wrongRedRowCount)) 
+    return (overdueCount - (redRowCount - wrongRedRowCount))
 }
 
 const daysBetween = function (date1, date2) {

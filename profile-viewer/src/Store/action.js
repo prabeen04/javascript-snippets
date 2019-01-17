@@ -11,3 +11,14 @@ export const setSelectedPeople = people => dispatch => {
         payload: people
     })
 }
+export const checkAllPeople = () => dispatch => {
+    dispatch({
+        type: types.CHECK_ALL_PEOPLE,
+    })
+}
+export const checkPeople = (id) => dispatch => {
+    dispatch({
+        type: types.CHECK_PEOPLE,
+        payload: id
+    })
+}

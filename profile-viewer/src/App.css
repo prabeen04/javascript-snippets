@@ -1,16 +1,21 @@
 .flex-container{
   display: flex;
 }
+.space-between{
+  justify-content: space-between;
+}
 .user-list{
   flex-basis: 30%;
   margin: 0.2rem;
   padding: 0.5rem;
+  border: 1px solid #eee;
   box-shadow: 0px 2px 5px -2px #666;
 }
 .user-detail{
   flex-basis: 70%;
   margin: 0.2rem;
   padding: 0.5rem;
+  border: 1px solid #eee;
   box-shadow: 0px 2px 5px -2px #666;
 }
 .navbar{
@@ -26,4 +31,5 @@
   width: -webkit-fill-available;  /* Mozilla-based browsers will ignore this. */
   width: fill-available;
   overflow: auto;
+  margin-bottom: 50px;
 }

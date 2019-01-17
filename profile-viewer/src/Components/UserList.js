@@ -1,19 +1,23 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from "redux";
-import { Image, List, Checkbox } from 'semantic-ui-react'
-import { setSelectedPeople } from "../Store/action";
+import { Image, List, Checkbox, Icon } from 'semantic-ui-react'
+import { setSelectedPeople, checkAllPeople, checkPeople } from "../Store/action";
 export class UserList extends Component {
     render() {
-        const { peoples, setSelectedPeople } = this.props;
+        const { peoples, setSelectedPeople, checkAllPeople, checkPeople, isAllSelected } = this.props;
         console.log(peoples)
         return (
             <>
-                <h1>User list</h1>
+                <div className='flex-container space-between'>
+                    <Checkbox checked={isAllSelected} onChange={checkAllPeople} />&nbsp;
+                <Icon name='trash alternate' circular onClick={() => console.log('handle Delete')} />
+
+                </div>
                 <List selection verticalAlign='middle'>
                     {peoples.map((people, i) => (
                         <List.Item key={i} onClick={() => setSelectedPeople(people)}>
-                        <Checkbox checked/>&nbsp;
+                            <Checkbox checked={people.isSelected} onChange={() => checkPeople(people.id)}/>&nbsp;
                             <Image avatar src={people.img} />
                             <List.Content>
                                 <List.Header>{people.name}</List.Header>
@@ -26,10 +30,10 @@ export class UserList extends Component {
     }
 }
 
-const mapStateToProps = ({ peoples }) => ({
-    peoples: peoples
+const mapStateToProps = ({ peoples, isAllSelected }) => ({
+    peoples, isAllSelected
 })
 
-const mapDispatchToProps = dispatch => bindActionCreators({ setSelectedPeople }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ setSelectedPeople, checkAllPeople, checkPeople }, dispatch)
 
 export default connect(mapStateToProps, mapDispatchToProps)(UserList)
