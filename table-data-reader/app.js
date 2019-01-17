@@ -17,5 +17,29 @@ function solution(D, T) {
     return rowCount - wrongDataCount
 }
 
-
+new Date('2018-10--09')
 console.log(solution(1, 2))
+
+// you can write to stdout for debugging purposes, e.g.
+// console.log('this is a debug message');
+function solution(D, T) {
+    let table = document.getElementsByTagName('table')[0];
+    let rows = table.getElementsByTagName('tr');
+    const books = [];
+    let overdueBooks = 0;
+    let wrongOverdues = 0;
+    for (var i = 0; i < rows.length; i++) {
+        let style = rows[i].getAttribute('style');
+        if (style === 'background-color: red') {
+            overdueBooks++;
+        }
+        for (var j = 0, col1, col2; col1 = rows[j][1], col2 = rows[j][2]; j++) {
+            //iterate through columns
+            //columns would be accessed using the "col" variable assigned in the for loop
+            if (new Date(col1.innerHTML) === new Date(col2.innerHTML)) {
+                wrongOverdues++
+            }
+        }
+    }
+    return overdueBooks - wrongOverdues
+}
