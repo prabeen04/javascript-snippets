@@ -12,7 +12,7 @@ export class UserList extends Component {
         return (
             <>
                 <div className='flex-container space-between'>
-                    <Checkbox checked={isAllSelected } onChange={checkAllPeople} indeterminate={ifAllUnchecked && !isAllSelected} />&nbsp;
+                    <Checkbox checked={isAllSelected && ifAllUnchecked } onChange={checkAllPeople} indeterminate={ifAllUnchecked && !isAllSelected} />&nbsp;
                 <Icon name='trash alternate' circular onClick={() => deleteSelectedPeople()} />
 
                 </div>

@@ -27,7 +27,7 @@ class AddUserModal extends Component {
         const { addUserModal, handleAddUserModal } = this.props;
         const { people: { name, Description } } = this.state
         return (
-            <Modal open={addUserModal} dimmer='blurring' style='' closeOnDimmerClick closeIcon onClose={() => handleAddUserModal(false)} >
+            <Modal open={addUserModal} dimmer='blurring' closeOnDimmerClick closeIcon onClose={() => handleAddUserModal(false)} >
                 <Modal.Header>Add User</Modal.Header>
                 <Modal.Content>
                     <Modal.Description>
