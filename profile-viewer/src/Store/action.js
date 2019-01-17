@@ -16,6 +16,11 @@ export const checkAllPeople = () => dispatch => {
         type: types.CHECK_ALL_PEOPLE,
     })
 }
+export const deleteSelectedPeople = () => dispatch => {
+    dispatch({
+        type: types.DELETE_SELECTED_PEOPLE,
+    })
+}
 export const checkPeople = (id) => dispatch => {
     dispatch({
         type: types.CHECK_PEOPLE,

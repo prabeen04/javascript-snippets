@@ -27,8 +27,9 @@ export default function (state = initialState, action) {
         case types.DELETE_SELECTED_PEOPLE:
             return {
                 ...state,
-                peoples: state.peoples.filter((people, i) => people.isSelected === true }),
-                isAllSelected: !state.isAllSelected
+                peoples: state.peoples.filter((people, i) => people.isSelected === false ),
+                isAllSelected: false,
+                selectedPeople: {},
             }
         default:
             return state
