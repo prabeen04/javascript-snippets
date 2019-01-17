@@ -22,8 +22,15 @@ export const deleteSelectedPeople = () => dispatch => {
     })
 }
 export const checkPeople = (id) => dispatch => {
+    console.log(id)
     dispatch({
         type: types.CHECK_PEOPLE,
         payload: id
+    })
+}
+export const addPeople = (people) => dispatch => {
+    dispatch({
+        type: types.ADD_PEOPLE,
+        payload: people
     })
 }

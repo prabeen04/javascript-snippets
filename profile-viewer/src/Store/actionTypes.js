@@ -1,5 +1,5 @@
 export const HANDLE_ADD_USER_MODAL = 'HANDLE_ADD_USER_MODAL';
-export const ADD_USER = 'ADD_USER';
+export const ADD_PEOPLE = 'ADD_PEOPLE';
 export const SET_SELECTED_PEOPLE = 'SET_SELECTED_PEOPLE'
 export const REMOVE_USER = 'REMOVE_USER';
 export const CHECK_ALL_PEOPLE = 'CHECK_ALL_PEOPLE';

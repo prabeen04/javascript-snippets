@@ -4,6 +4,7 @@ const users = peoples.People.map((user, i) => ({ ...user, id: i + 1, isSelected:
 const initialState = {
     addUserModal: false,
     peoples: users,
+    noOfPeople: users.length,
     selectedPeople: {},
     isAllSelected: false
 }
@@ -16,7 +17,7 @@ export default function (state = initialState, action) {
         case types.CHECK_PEOPLE:
             return {
                 ...state,
-                peoples: state.peoples.map((people, i) => i + 1 === action.payload ? { ...people, isSelected: !people.isSelected } : people)
+                peoples: state.peoples.map((people, i) => people.id === action.payload ? { ...people, isSelected: !people.isSelected } : people)
             }
         case types.CHECK_ALL_PEOPLE:
             return {
@@ -27,10 +28,12 @@ export default function (state = initialState, action) {
         case types.DELETE_SELECTED_PEOPLE:
             return {
                 ...state,
-                peoples: state.peoples.filter((people, i) => people.isSelected === false ),
+                peoples: state.peoples.filter((people, i) => people.isSelected === false),
                 isAllSelected: false,
                 selectedPeople: {},
             }
+        case types.ADD_PEOPLE:
+            return { ...state, peoples: [...state.peoples, action.payload], addUserModal: false, noOfPeople: state.noOfPeople+1 }
         default:
             return state
     }
