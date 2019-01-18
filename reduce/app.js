@@ -27,19 +27,14 @@ function flatten() {
     }
     return flat
 }
+// console.log(flatten(arr))
 
 //with reduce
 const flatWithReduce = function (array) {
-   return array.reduce((acc, item) => {
-       console.log('first loop', acc)
-        if (Array.isArray(item)) {
-            console.log('is array', item)
-            flatWithReduce(item)
-        } else {
-            acc.push(item)
-        }
-        return acc
-    }, [])
+    if (Array.isArray(array)) {
+
+    } else {
+
+    }
 }
 console.log(flatWithReduce(arr))
-console.log(flatten(arr))
