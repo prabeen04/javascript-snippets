@@ -1,6 +1,7 @@
 //flatten an nested array
 let arr = [1, [2], [3, [[4]]]] //expected output:  [1, 2, 3, 4]
 
+//with for loop
 function flatten() {
     var flat = [];
     for (var i=0; i<arr.length; i++) {
@@ -24,5 +25,12 @@ function flatten() {
     flat.push(arr[i]);
     }
     }
+    return flat
 }
-flatten()
+
+//with reduce
+const flatWithReduce= arr.reduce((acc, item) => {
+    return acc.concat(flatWithReduce(item))
+}, [])
+console.log(flatWithReduce)
+console.log(flatten(arr))
