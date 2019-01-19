@@ -1,6 +1,17 @@
 //flatten an nested array
 let arr = [1, [[2], [3, [[4]]]]] //expected output:  [1, 2, 3, 4]
 
+//list parent child
+const data = [
+    { name: 'Odisha', parent: null },
+    { name: 'Bhubaneswar', parent: 'Odisha' },
+    { name: 'Cuttack', parent: 'Odisha' },
+    { name: 'CDA', parent: 'Cuttack' },
+    { name: 'Odisha', parent: 'Bhubaneswar' },
+    { name: 'Mangalabag', parent: 'Cuttack' },
+    { name: 'Kalpana', parent: 'Bhubaneswar' },
+    { name: 'Rasulgarh', parent: 'Bhubaneswar' },
+]
 //with for loop
 function flatten() {
     var flat = [];
@@ -32,9 +43,9 @@ function flatten() {
 //with reduce
 const flatWithReduce = function (array) {
     return array.reduce((acc, item) => {
-        if(Array.isArray(item)){
+        if (Array.isArray(item)) {
             return acc.concat(flatWithReduce(item))
-        }else{
+        } else {
             acc.push(item)
         }
         return acc
