@@ -31,10 +31,9 @@ function flatten() {
 
 //with reduce
 const flatWithReduce = function (array) {
-    if (Array.isArray(array)) {
+    array.reduce((acc, item) => {
+        return acc
+    })
 
-    } else {
-
-    }
 }
 console.log(flatWithReduce(arr))
