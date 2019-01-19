@@ -1,5 +1,5 @@
 //flatten an nested array
-let arr = [1, [2], [3, [[4]]]] //expected output:  [1, 2, 3, 4]
+let arr = [1, [[2], [3, [[4]]]]] //expected output:  [1, 2, 3, 4]
 
 //with for loop
 function flatten() {
@@ -33,7 +33,7 @@ function flatten() {
 const flatWithReduce = function (array) {
     return array.reduce((acc, item) => {
         if(Array.isArray(item)){
-
+            return acc.concat(flatWithReduce(item))
         }else{
             acc.push(item)
         }
