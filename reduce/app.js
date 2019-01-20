@@ -7,7 +7,7 @@ const data = [
     { name: 'Bhubaneswar', parent: 'Odisha' },
     { name: 'Cuttack', parent: 'Odisha' },
     { name: 'CDA', parent: 'Cuttack' },
-    { name: 'Odisha', parent: 'Bhubaneswar' },
+    { name: 'Patia', parent: 'Bhubaneswar' },
     { name: 'Mangalabag', parent: 'Cuttack' },
     { name: 'Kalpana', parent: 'Bhubaneswar' },
     { name: 'Rasulgarh', parent: 'Bhubaneswar' },
@@ -55,12 +55,16 @@ const flatWithReduce = function (array) {
 // console.log(flatWithReduce(arr))
 
 //recursive example for child parent relation
-function childParentRelation(data) {
-    data.reduce((acc, item) => {
-        if (!data.parent) {
-            console.log(data)
+function childParentRelation(arr) {
+    arr.reduce((acc, item) => {
+        let count = 1;
+        console.log(acc)
+        if (item.parent === null) {
+            console.log('data')
+            acc[item.name] = `${count}${item.name}`
+            console.log(acc[item.name])
         }
         return acc
-    })
+    }, {})
 }
 console.log(childParentRelation(data))
