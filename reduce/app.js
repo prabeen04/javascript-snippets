@@ -55,15 +55,9 @@ const flatWithReduce = function (array) {
 // console.log(flatWithReduce(arr))
 
 //recursive example for child parent relation
-function childParentRelation(arr) {
-    arr.reduce((acc, item) => {
-        let count = 1;
-        console.log(acc)
-        if (item.parent === null) {
-            console.log('data')
-            acc[item.name] = `${count}${item.name}`
-            console.log(acc[item.name])
-        }
+function childParentRelation(arr, parent=null) {
+    return arr.reduce((acc, item) => {
+
         return acc
     }, {})
 }
