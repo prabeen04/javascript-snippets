@@ -37,11 +37,16 @@ function sortDuplicates(arr) {
     }
     const duplicateArr = [];
     const uniqArr = [];
-
+    const map = {}
     //filter duplicate arrays
     for (let i = 0; i < arr.length - 1; i++) {
-
+        if(!map[arr[i]]){
+            map[arr[i]] = 1
+        }else{
+            map[arr[i]]++
+        }
     }
+    console.log(map)
     return [...duplicateArr, ...uniqArr]
 
 }
@@ -68,10 +73,9 @@ function removeDuplicates(arr) {
             seen[arr[i]] = true
         }
     }
-    for(let item in seen){
-        uniqArr.push(item)
+    for (let item in seen) {
+        uniqArr.push(Number(item))
     }
-    console.log(seen)
     return uniqArr;
 
 }
