@@ -37,7 +37,30 @@ function sortDuplicates(arr) {
     }
     const duplicateArr = [];
     const uniqArr = [];
+
+    //filter duplicate arrays
+    for (let i = 0; i < arr.length - 1; i++) {
+
+    }
+    return [...duplicateArr, ...uniqArr]
+
+}
+
+console.log(sortDuplicates(arr2))
+
+/**
+ * remove duplicates in an array
+ */
+
+const arr3 = [1, 2, 3, 4, 5, 5, 6, 11, 11, 11, 34, 65, 77]
+
+function removeDuplicates(arr) {
+    if (!Array.isArray(arr)) {
+        console.log('incorrect input')
+        return
+    }
     const seen = {};
+    const uniqArr = [];
 
     //filter duplicate arrays
     for (let i = 0; i < arr.length - 1; i++) {
@@ -45,9 +68,12 @@ function sortDuplicates(arr) {
             seen[arr[i]] = true
         }
     }
+    for(let item in seen){
+        uniqArr.push(item)
+    }
     console.log(seen)
-    return [...duplicateArr, ...uniqArr]
+    return uniqArr;
 
 }
 
-console.log(sortDuplicates(arr2))
+console.log(removeDuplicates(arr3))
