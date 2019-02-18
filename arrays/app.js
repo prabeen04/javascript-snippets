@@ -20,7 +20,7 @@ function findDuplicateAndItsIndexes(arr, num) {
     return obj;
 }
 
-console.log(findDuplicateAndItsIndexes(arr1, 11))
+// console.log(findDuplicateAndItsIndexes(arr1, 11))
 
 /**
  * given an sorted array of integers re-arrange duplicate numbers to the start with maximum
@@ -40,9 +40,9 @@ function sortDuplicates(arr) {
     const map = {}
     //filter duplicate arrays
     for (let i = 0; i < arr.length - 1; i++) {
-        if(!map[arr[i]]){
+        if (!map[arr[i]]) {
             map[arr[i]] = 1
-        }else{
+        } else {
             map[arr[i]]++
         }
     }
@@ -51,7 +51,7 @@ function sortDuplicates(arr) {
 
 }
 
-console.log(sortDuplicates(arr2))
+// console.log(sortDuplicates(arr2))
 
 /**
  * remove duplicates in an array
@@ -80,4 +80,39 @@ function removeDuplicates(arr) {
 
 }
 
-console.log(removeDuplicates(arr3))
+// console.log(removeDuplicates(arr3))
+
+
+/**
+ * given two array check is they have any common Item
+ * input1 [1, 2, 5, 9]
+ * input2 [11, 21, 15, 89]
+ * return false
+ * 
+ * input1 [1, 2, 5, 9]
+ * input2 [11, 21, 5, 89]
+ * return true
+ */
+
+const array1 = [1, 2, 5, 9]
+const array2 = [11, 21, 15, 89]
+const array3 = [11, 21, 5, 89]
+
+function commonElementExists(arr1, arr2) {
+    console.log(arr2.length)
+    const obj = {}
+    for (let i = 0; i < arr1.length; i++) {
+        obj[arr1[i]] = true;
+    }
+    console.log(obj)
+    for (let j = 0; j < arr2.length; j++) {
+        console.log('inside loop')
+        if (arr2[j] in obj) {
+            console.log('insideIF', arr2[j])
+            return true
+        }
+    }
+    return false
+}
+
+console.log(commonElementExists(array3, array2))
