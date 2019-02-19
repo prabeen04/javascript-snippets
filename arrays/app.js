@@ -39,11 +39,19 @@ function sortDuplicates(arr) {
     const uniqArr = [];
     const map = {}
     //filter duplicate arrays
-    for (let i = 0; i < arr.length - 1; i++) {
+    for (let i = 0; i < arr.length; i++) {
         if (!map[arr[i]]) {
             map[arr[i]] = 1
         } else {
             map[arr[i]]++
+        }
+    }
+
+    for(let i = 0; i < arr.length; i++){
+        if(map[arr[i]] === 1){
+            uniqArr.push(arr[i])
+        }else{
+            duplicateArr.push(arr[i])
         }
     }
     console.log(map)
@@ -51,7 +59,7 @@ function sortDuplicates(arr) {
 
 }
 
-// console.log(sortDuplicates(arr2))
+console.log(sortDuplicates(arr2))
 
 /**
  * remove duplicates in an array
@@ -115,4 +123,4 @@ function commonElementExists(arr1, arr2) {
     return false
 }
 
-console.log(commonElementExists(array3, array2))
+// console.log(commonElementExists(array3, array2))
