@@ -169,14 +169,48 @@ function mostCommonWord(sentence) {
     // for(let word in wordMap){
     Object.keys(wordMap)
         .forEach((word) => {
-            console.log('inside IIII', wordMap[word])
             if (wordMap[word] > commonWord) {
                 commonWord = word
             }
         })
     // }
-    console.log(commonWord)
     return commonWord;
 }
 
-console.log(mostCommonWord(sentence))
+// console.log(mostCommonWord(sentence))
+
+/**
+ * merge two sorted arrays of integers
+ * input: [1, 5, 8, 6] & [0, 3, 5, 7]
+ * output: [0, 1, 3, 5, 5, 6, 7, 8]
+ */
+
+function mergeSortedArrays(arr1, arr2) {
+    if (!Array.isArray(arr1) && !Array.isArray(arr2)) {
+        console.log('icorrect inputs');
+        return;
+    }
+
+    const sortedArray = [];
+    let arr1Item = arr1[0];
+    let arr2Item = arr2[0];
+    let i = 1;
+    let j = 1;
+    while (arr1Item || arr2Item) {
+        console.log(arr1Item , arr2Item)
+        if (!arr2Item || arr1Item < arr2Item) {
+            sortedArray.push(arr1Item);
+            arr1Item = arr1[i]
+            i++
+        } else {
+            sortedArray.push(arr2Item)
+            arr2Item = arr2[j]
+            j++
+        }
+    }
+
+
+    return sortedArray;
+}
+
+console.log(mergeSortedArrays([1, 5, 8, 6], [0, 3, 5, 7]))
