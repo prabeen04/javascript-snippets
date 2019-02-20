@@ -47,10 +47,10 @@ function sortDuplicates(arr) {
         }
     }
 
-    for(let i = 0; i < arr.length; i++){
-        if(map[arr[i]] === 1){
+    for (let i = 0; i < arr.length; i++) {
+        if (map[arr[i]] === 1) {
             uniqArr.push(arr[i])
-        }else{
+        } else {
             duplicateArr.push(arr[i])
         }
     }
@@ -59,7 +59,7 @@ function sortDuplicates(arr) {
 
 }
 
-console.log(sortDuplicates(arr2))
+// console.log(sortDuplicates(arr2))
 
 /**
  * remove duplicates in an array
@@ -124,3 +124,25 @@ function commonElementExists(arr1, arr2) {
 }
 
 // console.log(commonElementExists(array3, array2))
+
+
+
+/**
+ * given an array of unsorted words and a word find if that word exists
+ */
+const words = ['paul', 'marcus', 'herera', 'matic', 'martial', 'lingard', 'de gea']
+
+function wordExists(arr, word) {
+    if (!Array.isArray(arr) && !word) {
+        console.log('incorrect input')
+        return
+    }
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] === word) {
+            return true;
+        }
+    }
+    return false
+}
+
+console.log(wordExists(words, 'matic'))
