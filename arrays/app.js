@@ -145,4 +145,38 @@ function wordExists(arr, word) {
     return false
 }
 
-console.log(wordExists(words, 'matic'))
+// console.log(wordExists(words, 'matic'))
+
+/**
+ *  Given a string of words, return the most common used word in it.
+ */
+
+const sentence = 'abc def ghi is not abc fed ihpg fed ihg fed ihg';
+
+function mostCommonWord(sentence) {
+    const wordArray = sentence.split(' ')
+    let commonWord = ''
+    let wordMap = {}
+
+    for (let i = 0; i < wordArray.length; i++) {
+        if (!wordMap[wordArray[i]]) {
+            wordMap[wordArray[i]] = 1
+        } else {
+            wordMap[wordArray[i]]++
+        }
+    }
+    // console.log(wordMap)
+    // for(let word in wordMap){
+    Object.keys(wordMap)
+        .forEach((word) => {
+            console.log('inside IIII', wordMap[word])
+            if (wordMap[word] > commonWord) {
+                commonWord = word
+            }
+        })
+    // }
+    console.log(commonWord)
+    return commonWord;
+}
+
+console.log(mostCommonWord(sentence))
