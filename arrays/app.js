@@ -195,10 +195,10 @@ function mergeSortedArrays(arr1, arr2) {
     let arr1Item = arr1[0];
     let arr2Item = arr2[0];
     let i = 1;
-    let j = 1;
+    let j = 0;
     while (arr1Item || arr2Item) {
         console.log(arr1Item , arr2Item)
-        if (!arr2Item || arr1Item < arr2Item) {
+        if (!arr2Item  || arr1Item < arr2Item) {
             sortedArray.push(arr1Item);
             arr1Item = arr1[i]
             i++
@@ -213,4 +213,4 @@ function mergeSortedArrays(arr1, arr2) {
     return sortedArray;
 }
 
-console.log(mergeSortedArrays([1, 5, 8, 6], [0, 3, 5, 7]))
+console.log(mergeSortedArrays([1, 5, 8, 6], [2, 3, 5, 7]))
