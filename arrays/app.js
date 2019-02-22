@@ -197,8 +197,8 @@ function mergeSortedArrays(arr1, arr2) {
     let i = 1;
     let j = 0;
     while (arr1Item || arr2Item) {
-        console.log(arr1Item , arr2Item)
-        if (!arr2Item  || arr1Item < arr2Item) {
+        console.log(arr1Item, arr2Item)
+        if (!arr2Item || arr1Item < arr2Item) {
             sortedArray.push(arr1Item);
             arr1Item = arr1[i]
             i++
@@ -213,4 +213,32 @@ function mergeSortedArrays(arr1, arr2) {
     return sortedArray;
 }
 
-console.log(mergeSortedArrays([1, 5, 8, 6], [2, 3, 5, 7]))
+// console.log(mergeSortedArrays([1, 5, 8, 6], [2, 3, 5, 7]))
+
+/**
+ * given an array find the first recurring character, if not return undefined
+ * input: [1, 2, 4, 6, 1, 8, 10]
+ * output: 1
+ */
+
+const recurringArr = [0, 2, 4, 6, 1, 8, 8, 10];
+function firstRecurringChar(arr) {
+    if (!Array.isArray(arr)) {
+        console.log('incorrect input')
+        return;
+    }
+
+    const charMap = {}
+
+    for (let i = 0; i < arr.length; i++) {
+        if (!charMap[arr[i]]) {
+            charMap[arr[i]] = arr[i];
+        } else {
+            return charMap[arr[i]]
+        }
+
+    }
+    return undefined;
+}
+
+console.log(firstRecurringChar(recurringArr))
