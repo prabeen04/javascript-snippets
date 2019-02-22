@@ -241,4 +241,34 @@ function firstRecurringChar(arr) {
     return undefined;
 }
 
-console.log(firstRecurringChar(recurringArr))
+// console.log(firstRecurringChar(recurringArr))
+
+
+/**
+ * check whether sum of two elements of an array presenting inside a array
+ * input [1, 2, 5, 8, 11], output :false
+ * input [1, 2, 3, 8, 11], output :true( 1+2 = 3)
+ */
+
+function sumOfElementExist(arr) {
+    if (!Array.isArray(arr)) {
+        console.log('incorrect input')
+        return;
+    }
+    const map = {};
+    for (let i = 0; i < arr.length; i++) {
+        map[arr[i]] = arr[i]
+    }
+
+    for (let i = 0; i < arr.length; i++) {
+        for (let j = i + 1; j < arr.length; j++) {
+            let sum = arr[i] + arr[j]
+            if (map[sum]) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+console.log(sumOfElementExist([1, 2, 3, 5, 8, 11]))
