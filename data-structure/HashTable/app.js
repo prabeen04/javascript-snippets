@@ -4,17 +4,33 @@ class HashTable {
         this.length = 0;
     }
 
-    _hash(key){
+    _hash(key) {
         //generate a hash
     }
 
-    set(key, value){
+    set(key, value) {
         //set the key value pair
+        this.data.push([key, value])
+        this.length++
+        return this
     }
 
-    get(key){
+    get(key) {
         //gey the value of the key
+        for (let i = 0; i < this.data.length; i++) {
+            if (key === this.data[i][0]) {
+                console.log(this.data[i][1])
+                return this.data[i][1]
+            }
+        }
+        console.log('value not exists')
+        return;
     }
 }
 
-console.log(new HashTable)
+const newMap = new HashTable();
+newMap.set('CF', 'Rashford')
+newMap.set('MF', 'Pogba')
+newMap.set('DF', 'Jones')
+newMap.get('DF')
+console.log(newMap)
