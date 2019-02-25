@@ -10,6 +10,17 @@ class LinkedList {
         this.length++;
         return this;
     }
+    removeFromHead() {
+        if (this.length === 0) {
+            return undefined;
+        }
+
+        const value = this.head.value;
+        this.head = this.head.next;
+        this.length--;
+
+        return value;
+    }
     add(value) {
         const newNode = {
             data: value,
@@ -39,4 +50,6 @@ myLinkedList.add('again')
 myLinkedList.add('as')
 myLinkedList.add('4')
 myLinkedList.addToHead('rrr')
+myLinkedList.removeFromHead()
+myLinkedList.removeFromHead()
 console.log(myLinkedList)
