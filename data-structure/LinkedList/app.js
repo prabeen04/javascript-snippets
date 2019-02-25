@@ -39,8 +39,15 @@ class LinkedList {
         }
     }
 
-    remove() {
-
+    find(value) {
+        let thisNode = this.head;
+        while (thisNode) {
+            if (thisNode.value === value) {
+                return thisNode;
+            }
+            thisNode = thisNode.next
+        }
+        return
     }
 }
 
