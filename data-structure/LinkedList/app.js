@@ -3,6 +3,13 @@ class LinkedList {
         this.head = null;
         this.length = 0;
     }
+    addToHead(value) {
+        const newNode = { value }; // 1
+        newNode.next = this.head;  // 2
+        this.head = newNode;       // 3
+        this.length++;
+        return this;
+    }
     add(value) {
         const newNode = {
             data: value,
@@ -31,5 +38,5 @@ myLinkedList.add('test')
 myLinkedList.add('again')
 myLinkedList.add('as')
 myLinkedList.add('4')
-myLinkedList.add('rrr')
+myLinkedList.addToHead('rrr')
 console.log(myLinkedList)
