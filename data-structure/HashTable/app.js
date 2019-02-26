@@ -16,14 +16,12 @@ class HashTable {
     }
 
     get(key) {
-        //gey the value of the key
+        //get the value of the key
         for (let i = 0; i < this.data.length; i++) {
             if (key === this.data[i][0]) {
-                console.log(this.data[i][1])
                 return this.data[i][1]
             }
         }
-        console.log('value not exists')
         return;
     }
 }
