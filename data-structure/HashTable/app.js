@@ -24,6 +24,14 @@ class HashTable {
         }
         return;
     }
+    hasItem(key) {
+        for (let i = 0; i < data.length; i++) {
+            if (data[i][0] === key) {
+                return true;
+            }
+        }
+        return false;
+    }
 }
 
 const newMap = new HashTable();
