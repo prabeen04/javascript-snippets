@@ -324,4 +324,4 @@ function stringReverse3(str) {
     }, '')
 }
 
-console.log(stringReverse3('9'))
+// console.log(stringReverse3('9'))
