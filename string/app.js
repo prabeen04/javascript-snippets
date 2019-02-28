@@ -50,3 +50,21 @@ function stringReverse3(str) {
 }
 
 // console.log(stringReverse3('9'))
+
+/**
+ * check whether a given string is a palindrome
+ */
+
+function isPalindrome(str) {
+    if (typeof str !== 'string') {
+        console.log('incorrect input');
+        return;
+    }
+    if (str.length === 1) {
+        return true;
+    }
+
+    return str === str.split('').reverse().join('');
+}
+
+console.log(isPalindrome('tetet'))
