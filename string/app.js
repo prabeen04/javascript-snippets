@@ -63,7 +63,7 @@ function isPalindrome(str) {
     if (str.length === 1) {
         return true;
     }
-
+    str = str.replace(/\W/g, '').toLowerCase();
     return str === str.split('').reverse().join('');
 }
 
