@@ -308,4 +308,20 @@ function stringReverse2(str) {
     return reversedString
 }
 
-console.log(stringReverse2('0123456'))
+// console.log(stringReverse2('0123456'))
+
+function stringReverse3(str) {
+    if (typeof str !== 'string') {
+        console.log('incorrect input');
+        return;
+    }
+    if (str.length === 1) {
+        return stringReverse1;
+    }
+    let strArr = str.split('');
+    return strArr.reduce((acc, char, i) => {
+        return char + acc
+    }, '')
+}
+
+console.log(stringReverse3('sdkgj'))
