@@ -288,4 +288,24 @@ function stringReverse1(str) {
     return str.split('').reverse().join('');
 }
 
-console.log(stringReverse1('123456'))
+// console.log(stringReverse1('123456'))
+
+function stringReverse2(str) {
+    if (typeof str !== 'string') {
+        console.log('incorrect input');
+        return;
+    }
+    if (str.length === 1) {
+        return stringReverse1;
+    }
+
+    let strArr = str.split('');
+    let reversedString = '';
+    for (let i = strArr.length - 1; i >= 0; i--) {
+        reversedString += strArr[i]
+    }
+
+    return reversedString
+}
+
+console.log(stringReverse2('0123456'))
