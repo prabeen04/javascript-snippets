@@ -283,7 +283,7 @@ function stringReverse1(str) {
         return;
     }
     if (str.length === 1) {
-        return stringReverse1;
+        return str;
     }
     return str.split('').reverse().join('');
 }
@@ -296,7 +296,7 @@ function stringReverse2(str) {
         return;
     }
     if (str.length === 1) {
-        return stringReverse1;
+        return str;
     }
 
     let strArr = str.split('');
@@ -316,7 +316,7 @@ function stringReverse3(str) {
         return;
     }
     if (str.length === 1) {
-        return stringReverse1;
+        return str;
     }
     let strArr = str.split('');
     return strArr.reduce((acc, char, i) => {
@@ -324,4 +324,4 @@ function stringReverse3(str) {
     }, '')
 }
 
-console.log(stringReverse3('sdkgj'))
+console.log(stringReverse3('9'))
