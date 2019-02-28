@@ -271,4 +271,21 @@ function sumOfElementExist(arr) {
     return false;
 }
 
-console.log(sumOfElementExist([1, 2, 3, 5, 8, 11]))
+// console.log(sumOfElementExist([1, 2, 3, 5, 8, 11]))
+
+/**
+ * reverse a string
+ */
+
+function stringReverse1(str) {
+    if (typeof str !== 'string') {
+        console.log('incorrect input');
+        return;
+    }
+    if (str.length === 1) {
+        return stringReverse1;
+    }
+    return str.split('').reverse().join('');
+}
+
+console.log(stringReverse1('123456'))
