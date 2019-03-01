@@ -274,29 +274,26 @@ function sumOfElementExist(arr) {
 // console.log(sumOfElementExist([1, 2, 3, 5, 8, 11]))
 
 
-function stringReverse3(str) {
-    if (typeof str !== 'string') {
-        console.log('incorrect input');
-        return;
-    }
-    if (str.length === 1) {
-        return str;
-    }
-    let strArr = str.split('');
-    return strArr.reduce((acc, char, i) => {
-        return char + acc
-    }, '')
-}
-
-// console.log(stringReverse3('9'))
-
-
 /**
  * remove next immediate duplicate in an array
  * input: [100, 200, 200, 400, 500, 500, 500, 700, 800, 800]
  * output: [100, 200, 400, 500, 700, 800]
  */
 
- function removeNextDuplicate(arr){
+function removeNextDuplicate(arr) {
+    if (!Array.isArray(arr)) {
+        console.log('incorrect input')
+        return;
+    }
 
- }
+    const newArr = []
+
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] !== arr[i + 1]) {
+            newArr.push(arr[i])
+        }
+    }
+    return newArr
+}
+
+console.log(removeNextDuplicate([100, 200, 200, 400, 500, 500, 500, 700, 800, 800]))
