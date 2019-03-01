@@ -67,4 +67,41 @@ function isPalindrome(str) {
     return str === str.split('').reverse().join('');
 }
 
-console.log(isPalindrome('tetet'))
+// console.log(isPalindrome('t  *# ete t'))
+
+//what is the error
+new Promise((resolve, reject) => {
+    return resolve('resolved')
+    throw new Error('error')
+}).then(console.log(''))
+
+
+//output === 2
+Promise.resolve(1)
+    .then((x) => x + 1)
+    .then((x) => { throw new Error('My Error') })
+    .catch(() => 1)
+    .then((x) => x + 1)
+    .then((x) => console.log(x))
+    .catch(console.error)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
