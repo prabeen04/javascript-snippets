@@ -296,4 +296,4 @@ function removeNextDuplicate(arr) {
     return newArr
 }
 
-console.log(removeNextDuplicate([100, 200, 200, 400, 500, 500, 500, 700, 800, 800]))
+console.log(removeNextDuplicate([100, 100, 200, 200, 400, 100, 100, 500, 500, 500, 700, 800, 800]))
