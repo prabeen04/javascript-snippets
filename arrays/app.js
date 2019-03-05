@@ -299,4 +299,21 @@ function removeNextDuplicate(arr) {
     return newArr
 }
 
-console.log(removeNextDuplicate([100, 100, 200, 200, 400, 100, 100, 500, 500, 500, 700, 800, 800]))
+// console.log(removeNextDuplicate([100, 100, 200, 200, 400, 100, 100, 500, 500, 500, 700, 800, 800]))
+
+/**
+ * Find max sum of an Array where no 2 elements are Adjacent
+ */
+function maxNoAdjacent(source) {
+    let inclCurrent = source[0];
+    let exclPrev = 0;
+    let tempMax;
+    for (let i = 1; i < source.length; i++) {
+        tempMax = Math.max(inclCurrent, exclPrev);
+        inclCurrent = exclPrev + source[i];
+        exclPrev = tempMax;
+    }
+    return Math.max(inclCurrent, exclPrev);
+}
+
+console.log(maxNoAdjacent([100, 200, 400, 500, 700, 800]))
