@@ -151,7 +151,7 @@ function wordExists(arr, word) {
  *  Given a string of words, return the most common used word in it.
  */
 
-const sentence = 'abc def ghi is not abc fed ihpg fed ihg fed ihg';
+const sentence = 'abc def ghi is not abc fed fed ihpg fed ihg fed ihg';
 
 function mostCommonWord(sentence) {
     const wordArray = sentence.split(' ')
@@ -177,7 +177,7 @@ function mostCommonWord(sentence) {
     return commonWord;
 }
 
-// console.log(mostCommonWord(sentence))
+console.log(mostCommonWord(sentence))
 
 /**
  * merge two sorted arrays of integers
@@ -316,4 +316,4 @@ function maxNoAdjacent(source) {
     return Math.max(inclCurrent, exclPrev);
 }
 
-console.log(maxNoAdjacent([100, 200, 400, 500, 700, 800]))
+// console.log(maxNoAdjacent([100, 200, 400, 500, 700, 800]))
