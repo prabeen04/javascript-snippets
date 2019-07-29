@@ -84,17 +84,27 @@ test(1)
 
 const heros = [
     { firstName: 'tom', lastName: 'Holand', age: 23, gender: 'male' },
-    { firstName: 'tony', lastName: 'Stark', age: 34, gender: 'male' },
-    { firstName: 'captain', age: 45, gender: 'female' },
+    { firstName: 'Tony', lastName: 'Stark', age: 34, gender: 'male' },
+    { firstName: 'Captain', age: 45, gender: 'female' },
     { firstName: 'doctor', lastName: 'strange', age: 56, gender: 'female' },
+    { firstName: 'Black', lastName: 'widow', age: 18, gender: 'female' },
 ]
-const newArr2 = heros.filter(({ age, gender }) => age >= 33 && gender === 'female')
-.map(({firstName, lastName, age, gender}) => ({
-    FullName: firstName +' '+ lastName,
-    age: age,
-    gender: gender
-}))
+// const newArr2 = heros.filter(({ age, gender }) => age >= 33 && gender === 'female')
+// .map(({firstName, lastName, age, gender}) => ({
+//     FullName: firstName +' '+ lastName,
+//     age: age,
+//     gender: gender
+// }))
 
-console.log(newArr2)
-//[{fullName: 'tom hollana', age: 23, gender: 'ale' }]
-
+// console.log(newArr2)
+// //[{fullName: 'tom hollana', age: 23, gender: 'ale' }]
+// const newArr3 = heros.filter(({firstName})=> firstName.startsWith("t"))
+// console.log(newArr3)
+const sortedArr = heros.sort((a, b) => {
+    if(a.firstName.toUpperCase() > b.firstName.toUpperCase()){
+        return 1
+    }else{
+        return -1
+    }
+})
+console.log(sortedArr)
