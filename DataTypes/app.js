@@ -88,22 +88,13 @@ const heros = [
     { firstName: 'captain', age: 45, gender: 'female' },
     { firstName: 'doctor', lastName: 'strange', age: 56, gender: 'female' },
 ]
-const arr2 = heros.map(({ firstName, lastName, age }) => {
-    return `${firstName} ${lastName || ''} -age: ${age}`
-})
-console.log(arr2)
+const newArr2 = heros.filter(({ age, gender }) => age >= 33 && gender === 'female')
+.map(({firstName, lastName, age, gender}) => ({
+    FullName: firstName +' '+ lastName,
+    age: age,
+    gender: gender
+}))
 
+console.log(newArr2)
+//[{fullName: 'tom hollana', age: 23, gender: 'ale' }]
 
-function isGreater({ age, gender }) {
-    if (age >= 33 && gender === 'female') {
-        return true
-    } else {
-        return false
-    }
-}
-
-// const arr3 = heros.filter(isGreater)
-
-const arr4 = heros.filter(({ age, gender }) => age >= 33 && gender === 'female')
-
-console.log(arr4)
