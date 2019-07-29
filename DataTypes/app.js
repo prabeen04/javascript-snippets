@@ -1,8 +1,10 @@
 //HOISTING
+//COERTION
 
 //data types
 //string
 //number
+//boolean
 //undefined
 //null
 //object -> array, function
@@ -42,3 +44,61 @@
 // let test2 = 67;
 // console.log(scope())
 
+//OBJECT
+
+
+// const obj1 = {}
+// obj1.name = 'santosh'
+// obj1.sing = function sing(voice) {
+//     return 'lalala'
+// }
+// obj1.child = {
+//     test: 'asfjhasl'
+// }
+// obj1.arr = [124,124 ,14,142,1,24,1]
+
+// console.log(obj1)
+
+//Coerting ===, ==
+
+console.log([] == '')
+
+
+//FUNTCTIONS
+function name() { }
+() => { }
+
+function addTwo(num, i, arr, x) {
+    // console.log(num, i, arr, x)
+    return num + 2
+}
+const addTwo2 = (num) => num + 2
+const arr = [2, 3, 5, 7, 8]
+
+const newArr = arr.map((num) => addTwo(num + 2))
+// console.log(newArr)
+function test(a, b = 6, c, d) {
+    console.log(a, b)
+}
+test(1)
+
+const heros = [
+    { firstName: 'tom', lastName: 'Holand', age: 23 },
+    { firstName: 'tony', lastName: 'Stark', age: 34 },
+    { firstName: 'captain', age: 45 },
+    { firstName: 'doctor', lastName: 'strange', age: 56 },
+]
+const arr2 = heros.map(({ firstName, lastName, age }) => {
+    //    return user.firstName +' '+ user.lastName+  '-age:' +user.age
+    return `${firstName} ${lastName || ''} -age: ${age}`
+})
+console.log(arr2)
+
+
+function Avatar({ imgUrl, height, width, type }) {
+    return <Avatar
+        imgUrl={imgUrl}
+        height={height || 32}
+        width={width || 32}
+    />
+}
