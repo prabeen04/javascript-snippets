@@ -83,22 +83,27 @@ function test(a, b = 6, c, d) {
 test(1)
 
 const heros = [
-    { firstName: 'tom', lastName: 'Holand', age: 23 },
-    { firstName: 'tony', lastName: 'Stark', age: 34 },
-    { firstName: 'captain', age: 45 },
-    { firstName: 'doctor', lastName: 'strange', age: 56 },
+    { firstName: 'tom', lastName: 'Holand', age: 23, gender: 'male' },
+    { firstName: 'tony', lastName: 'Stark', age: 34, gender: 'male' },
+    { firstName: 'captain', age: 45, gender: 'female' },
+    { firstName: 'doctor', lastName: 'strange', age: 56, gender: 'female' },
 ]
 const arr2 = heros.map(({ firstName, lastName, age }) => {
-    //    return user.firstName +' '+ user.lastName+  '-age:' +user.age
     return `${firstName} ${lastName || ''} -age: ${age}`
 })
 console.log(arr2)
 
 
-function Avatar({ imgUrl, height, width, type }) {
-    return <Avatar
-        imgUrl={imgUrl}
-        height={height || 32}
-        width={width || 32}
-    />
+function isGreater({ age, gender }) {
+    if (age >= 33 && gender === 'female') {
+        return true
+    } else {
+        return false
+    }
 }
+
+// const arr3 = heros.filter(isGreater)
+
+const arr4 = heros.filter(({ age, gender }) => age >= 33 && gender === 'female')
+
+console.log(arr4)
